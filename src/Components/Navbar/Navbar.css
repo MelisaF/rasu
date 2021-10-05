@@ -1,0 +1,13 @@
+.bi-cart {
+    color: white;
+    
+}
+#navbarNav {
+    justify-content:flex-start;
+}
+.fontTitle {
+    font-family: 'Dancing Script', cursive;
+}
+.text-items {
+    font-family: 'Open Sans', sans-serif;
+}

@@ -1,0 +1,25 @@
+import React from 'react';
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {Cart} from '../Components/Cart/Cart'
+import { Contact } from '../Components/Contact/Contact';
+import { ItemDetail } from '../Components/ItemDetail/ItemDetail';
+import { ItemList } from '../Components/ItemList/ItemList';
+import { Navbar } from '../Components/Navbar/Navbar';
+import { PaginaInicio } from '../Components/PaginaInicio/PaginaInicio';
+
+export const AppRoutes = () => {
+    return (
+        <div>
+            <Router>
+                <Navbar/>
+                <Switch>
+                    <Route path= "/" exact component={PaginaInicio}/>
+                    <Route path= "/ListProducts" exact component={ItemList}/>
+                    <Route path= "/producto/:id" exact component={ItemDetail}/>
+                    <Route path= "/contact" exact component={Contact}/>
+                    <Route path= "/Cart" exact component={Cart}/>
+                </Switch>
+            </Router>
+        </div>
+    )
+}

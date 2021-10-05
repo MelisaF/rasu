@@ -1,0 +1,23 @@
+.sectionContacto {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+.section_contact > .titleSesion{
+    margin-left: 20%;
+}
+
+#formContacto{
+display: flex;
+flex-direction: column;
+}
+
+input {
+margin-bottom: 3%;
+}
+
+#btnEnviarForm{
+    margin: 5% 0% 0% 40%;
+}
+.imgContacto {
+    width: 100%;
+}
