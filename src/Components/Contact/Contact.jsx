@@ -4,7 +4,7 @@ import './contact.css'
 export const Contact = () => {
     return (
         <div className="sectionContacto">
-            <div className="section_contact">
+            <div className="section_contact my-5">
                 <h1 className="titleSesion">CONTACTANOS</h1>
                 <form id="formContacto">
                     <input name="nombre" id="nombre" type="text" placeholder="Nombre"/>

@@ -15,6 +15,9 @@ export const ItemDetail = () => {
         setCart (prev => {
             return [...prev, itemCantidad]; 
         }); 
+        if(item === item.id) {
+            item.cantidad++
+        }
     }
     return (
         <div>
@@ -30,6 +33,7 @@ export const ItemDetail = () => {
                             <h4 className="card-text"><small className="text-muted">Stock: disponible</small></h4>
                             <h4><small className="text-muted">Talle:</small></h4>
                             <select style= {{width:"50px"}}>
+                                <option>XS</option>
                                 <option>S</option>
                                 <option>M</option>
                                 <option>L</option>
