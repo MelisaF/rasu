@@ -5,20 +5,27 @@ import { ItemCount } from '../ItemCount/ItemCount';
 import {ItemContext} from '../../context/ItemContext';
 import './itemDetail.css';
 
+
 export const ItemDetail = () => {
     const {id} = useParams();
-    const item = getElementById(parseInt(id));
-
-    const {setCart} = useContext (ItemContext);
+    const item =getElementById(parseInt(id));
+    const {setCart, cart} = useContext (ItemContext);
+    
     const Add = (cantidad) => {
         const itemCantidad = {...item, cantidad};
-        setCart (prev => {
-            return [...prev, itemCantidad]; 
-        }); 
-        if(item === item.id) {
-            item.cantidad++
+        let carrito = [];
+        
+        let existCart = cart.find (item =>item.id === id);
+        if(existCart) {
+            carrito = cart.map((item) => item.id === id ? {...item, cantidad: item.cantidad + cantidad} : item);
         }
+        else {
+            carrito = [...cart, itemCantidad];
+        }
+        setCart(carrito);
     }
+
+
     return (
         <div>
             <h1 className="mt-3 mx-3">Detail</h1>
