@@ -4,13 +4,14 @@ import './cart.css';
 import {Link} from 'react-router-dom';
 
 
-export const Cart = ({cantidad}) => {
+export const Cart = () => {
     const {cart, setCart} = useContext(ItemContext);
     const totalFinal = [];
     const precioFinal = (prev, next) => prev + next;
     
     const handleAdd = (id) => {
-        let carrito = cart.map((item) => item.id === id ? {...item, cantidad: item.cantidad + cantidad +1} : item);
+        let carrito = cart.map((item) =>
+            item.id === id ? {...item, cantidad: item.cantidad  +1} : item);
         setCart(carrito);
     }
     const handleRest = (id) => {
@@ -49,7 +50,7 @@ export const Cart = ({cantidad}) => {
                                         <th scope="col">Id</th>
                                         <th scope="col">Description</th>
                                         <th scope="col">Count</th>
-                                        <th scope="col">Price</th>
+                                        <th scope="col">Price u.</th>
                                         <th scope="col">Delete</th>
                                     </tr>
                                 </thead>

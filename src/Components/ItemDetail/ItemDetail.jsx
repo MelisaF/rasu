@@ -15,9 +15,9 @@ export const ItemDetail = () => {
         const itemCantidad = {...item, cantidad};
         let carrito = [];
         
-        let existCart = cart.find (item =>item.id === id);
+        let existCart = cart.find (item =>item.id == id);
         if(existCart) {
-            carrito = cart.map((item) => item.id === id ? {...item, cantidad: item.cantidad + cantidad} : item);
+            carrito = cart.map((item) => item.id == id ? {...item, cantidad: item.cantidad + cantidad} : item);
         }
         else {
             carrito = [...cart, itemCantidad];

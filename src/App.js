@@ -9,10 +9,11 @@ function App() {
 
   return(
     <>
-    
+      <CustomProvider>
         <ItemContext.Provider value = {{cart, setCart}}>
           <AppRoutes/>
         </ItemContext.Provider>
+      </CustomProvider>
     </>
   )
 }
