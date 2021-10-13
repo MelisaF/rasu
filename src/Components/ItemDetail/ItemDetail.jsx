@@ -4,11 +4,41 @@ import { getElementById } from '../../Utils/getElementById';
 import { ItemCount } from '../ItemCount/ItemCount';
 import {ItemContext} from '../../context/ItemContext';
 import './itemDetail.css';
+import {firestore} from '../../Firebase/firebase';
+import {useEffect, useState} from 'react'
 
 
 export const ItemDetail = () => {
     const {id} = useParams();
     const item =getElementById(parseInt(id));
+    const [productos, setProductos] = useState ([])
+
+    useEffect (()=> {
+        const dataBase = firestore
+        const coleccion= dataBase.collection("productos")
+    
+        const consulta= coleccion.get()
+        
+        consulta
+            .then((resultado) => {
+                console.log("todo bien")
+                resultado.docs.forEach(producto => {
+                const productoFinal = {
+                    id: producto.id,
+                    ...producto.data()
+            }
+            console.log(productoFinal)
+            });
+        })
+        .catch(() => {
+            console.log("Error")
+    })
+    
+    })
+
+
+                
+
     const {setCart, cart} = useContext (ItemContext);
     
     const Add = (cantidad) => {
