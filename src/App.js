@@ -1,7 +1,7 @@
 import './App.css';
 import { AppRoutes } from './Routes/AppRoutes';
 import { CustomProvider, ItemContext } from './context/ItemContext';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 
 
 export const App= () => {
