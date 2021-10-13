@@ -6,11 +6,11 @@ import db from '../firebase/firebase'
 export const useGetItems = (id = 0) => {
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState (true);
-    console.log(productos)
+    
     useEffect (() => {
         setLoading(true);
         onSnapshot(collection(db,"Productos"), async (snapshot)=> {
-            const filteredProducts = await snapshot.doc.map (item=> ({
+            const filteredProducts = await snapshot.docs.map (item=> ({
                 ...item.data(),
                 id: item.id
             }));

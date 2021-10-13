@@ -3,7 +3,7 @@ import {Card} from '../Card/Card';
 import './ItemListContainer.css';
 
 export const ItemListContainer =() => {
-    const {loading, productos} = useGetItems
+    const {loading, productos} = useGetItems()
     return (
         <>
             {
