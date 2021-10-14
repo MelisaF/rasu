@@ -7,7 +7,7 @@ import { useGetItems } from '../../hooks/useGetItems';
 
 export const ItemDetail = () => {
     const {id} = useParams();
-    const {loading, producto: item } = useGetItems(id);
+    const {loading, productos: item } = useGetItems(id);
 
 
     const {setCart, cart} = useContext (ItemContext);
